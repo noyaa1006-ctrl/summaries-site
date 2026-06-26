@@ -5,29 +5,58 @@
   <title>סיכומים של נויה</title>
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-hover: #334155;
+      --text: #ffffff;
+      --primary: #2563eb;
+      --muted: rgba(255,255,255,0.75);
+    }
+
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       direction: rtl;
-      background: #0f172a;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    header {
+    /* HERO */
+    .hero {
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 90px 20px 40px;
     }
 
-    header h1 {
-      font-size: 42px;
+    .hero h1 {
+      font-size: 48px;
       margin: 0;
     }
 
-    header p {
-      opacity: 0.8;
-      margin-top: 10px;
+    .hero p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 18px;
     }
 
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 22px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* NAV */
     nav {
       display: flex;
       justify-content: center;
@@ -36,10 +65,11 @@
       padding: 15px;
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
 
     nav a {
-      color: white;
+      color: var(--text);
       text-decoration: none;
       font-weight: bold;
       padding: 8px 14px;
@@ -48,9 +78,10 @@
     }
 
     nav a:hover {
-      background: #2563eb;
+      background: var(--primary);
     }
 
+    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -59,38 +90,80 @@
     }
 
     .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 15px;
+      background: linear-gradient(145deg, #1e293b, #111827);
+      padding: 28px;
+      border-radius: 18px;
       text-align: center;
       text-decoration: none;
-      color: white;
-      transition: 0.3s;
+      color: var(--text);
       font-size: 18px;
       font-weight: bold;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255,255,255,0.05);
+      cursor: pointer;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      background: #334155;
+      transform: translateY(-8px) scale(1.03);
+      background: var(--card-hover);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
 
+    /* WHY SECTION */
+    .why {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .why h2 {
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0 40px;
+    }
+
+    .why-card {
+      background: #111827;
+      padding: 20px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      background: var(--card-hover);
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
-      opacity: 0.6;
+      opacity: 0.7;
       font-size: 14px;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-  <header>
+  <!-- HERO -->
+  <header class="hero">
     <h1>📚 אתר הסיכומים של נויה</h1>
-    <p>כל הסיכומים שלך במקום אחד מסודר וברור</p>
+    <p>כל הסיכומים שלך במקום אחד מסודר, ברור ונוח ללמידה</p>
+    <a href="#grid" class="btn">התחילי ללמוד 🚀</a>
   </header>
 
+  <!-- NAV -->
   <nav>
     <a href="index.html">בית</a>
     <a href="math.html">מתמטיקה</a>
@@ -100,20 +173,30 @@
     <a href="about.html">על עצמי</a>
   </nav>
 
-  <div class="grid">
-
+  <!-- GRID -->
+  <div class="grid" id="grid">
     <a class="card" href="math.html">📘 מתמטיקה</a>
     <a class="card" href="physics.html">🔬 פיזיקה</a>
     <a class="card" href="tips.html">💡 טיפים ללמידה</a>
     <a class="card" href="faq.html">❓ שאלות ותשובות</a>
     <a class="card" href="about.html">👤 על עצמי</a>
-
   </div>
 
+  <!-- WHY -->
+  <section class="why">
+    <h2>למה להשתמש באתר? 🤔</h2>
+
+    <div class="why-grid">
+      <div class="why-card">📂 כל הסיכומים במקום אחד</div>
+      <div class="why-card">🎯 מסודר לפי מקצועות</div>
+      <div class="why-card">🚀 עוזר ללמוד מהר יותר</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     נבנה באהבה ❤️ אתר סיכומים אישי
   </footer>
 
 </body>
 </html>
-
