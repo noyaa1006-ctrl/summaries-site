@@ -2,25 +2,85 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>טיפים ללמידה</title>
+  <title>טיפים</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      direction: rtl;
+      background: #0f172a;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #111827;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    nav a:hover {
+      background: #2563eb;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial; direction: rtl; text-align: center;">
+<body>
+
+  <nav>
+    <a href="index.html">בית</a>
+    <a href="math.html">מתמטיקה</a>
+    <a href="physics.html">פיזיקה</a>
+    <a href="tips.html">טיפים</a>
+    <a href="faq.html">שאלות</a>
+    <a href="about.html">על עצמי</a>
+  </nav>
 
   <h1>💡 טיפים ללמידה</h1>
 
-  <p>כאן תמצאי טיפים שיעזרו לך להצליח במבחנים</p>
+  <div class="container">
 
-  <ul style="display:inline-block; text-align:right;">
-    <li>לחלק את החומר לחלקים קטנים</li>
-    <li>לא לדחות לימודים לרגע האחרון</li>
-    <li>לעשות חזרות קצרות כל יום</li>
-    <li>להסביר לעצמך את החומר בקול</li>
-    <li>לפתור תרגילים ולא רק לקרוא</li>
-  </ul>
+    <div class="box">
+      <h3>טיפ 1</h3>
+      <p>לחלק את החומר לחלקים קטנים וללמוד כל יום קצת</p>
+    </div>
 
-  <br><br>
-  <a href="index.html">⬅ חזרה לדף הבית</a>
+    <div class="box">
+      <h3>טיפ 2</h3>
+      <p>לא לדחות למבחן ברגע האחרון</p>
+    </div>
+
+  </div>
 
 </body>
 </html>

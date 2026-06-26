@@ -2,63 +2,118 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>אתר הסיכומים שלי</title>
+  <title>סיכומים של נויה</title>
 
   <style>
     body {
+      margin: 0;
       font-family: Arial;
       direction: rtl;
-      text-align: center;
-      background: linear-gradient(to right, #f7f7ff, #eef2ff);
-      margin: 0;
+      background: #0f172a;
+      color: white;
     }
 
     header {
-      background: #4f46e5;
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+
+    header p {
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #111827;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
       color: white;
-      padding: 30px;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .card {
-      display: inline-block;
-      background: white;
-      margin: 10px;
-      padding: 20px;
-      width: 200px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-decoration: none;
-      color: black;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
+    nav a:hover {
+      background: #2563eb;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
+      background: #334155;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.6;
+      font-size: 14px;
     }
   </style>
-
 </head>
 
 <body>
 
-<header>
-  <h1>📚 אתר הסיכומים שלי</h1>
-  <p>כל הסיכומים שלך במקום אחד</p>
-</header>
+  <header>
+    <h1>📚 אתר הסיכומים של נויה</h1>
+    <p>כל הסיכומים שלך במקום אחד מסודר וברור</p>
+  </header>
 
-<div class="container">
+  <nav>
+    <a href="index.html">בית</a>
+    <a href="math.html">מתמטיקה</a>
+    <a href="physics.html">פיזיקה</a>
+    <a href="tips.html">טיפים</a>
+    <a href="faq.html">שאלות</a>
+    <a href="about.html">על עצמי</a>
+  </nav>
 
-  <a class="card" href="math.html">📘 מתמטיקה</a>
-  <a class="card" href="physics.html">🔬 פיזיקה</a>
-  <a class="card" href="tips.html">💡 טיפים</a>
-  <a class="card" href="faq.html">❓ שאלות</a>
-  <a class="card" href="about.html">👤 על עצמי</a>
+  <div class="grid">
 
-</div>
+    <a class="card" href="math.html">📘 מתמטיקה</a>
+    <a class="card" href="physics.html">🔬 פיזיקה</a>
+    <a class="card" href="tips.html">💡 טיפים ללמידה</a>
+    <a class="card" href="faq.html">❓ שאלות ותשובות</a>
+    <a class="card" href="about.html">👤 על עצמי</a>
+
+  </div>
+
+  <footer>
+    נבנה באהבה ❤️ אתר סיכומים אישי
+  </footer>
 
 </body>
 </html>
+

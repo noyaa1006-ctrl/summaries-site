@@ -3,23 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>שאלות ותשובות</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      direction: rtl;
+      background: #0f172a;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #111827;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    nav a:hover {
+      background: #2563eb;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial; direction: rtl; text-align: center;">
+<body>
+
+  <nav>
+    <a href="index.html">בית</a>
+    <a href="math.html">מתמטיקה</a>
+    <a href="physics.html">פיזיקה</a>
+    <a href="tips.html">טיפים</a>
+    <a href="faq.html">שאלות</a>
+    <a href="about.html">על עצמי</a>
+  </nav>
 
   <h1>❓ שאלות ותשובות</h1>
 
-  <h3>איך הכי טוב ללמוד למבחן?</h3>
-  <p>לחלק את החומר לחלקים קטנים ולחזור כל יום קצת במקום לדחוס הכל ביום אחד.</p>
+  <div class="container">
 
-  <h3>מה לעשות אם לא מבינים את החומר?</h3>
-  <p>לנסות הסברים אחרים (סיכומים, סרטונים) ולשאול חברים או מורה.</p>
+    <div class="box">
+      <h3>איך ללמוד למבחן?</h3>
+      <p>לחלק את החומר ולתרגל כל יום קצת</p>
+    </div>
 
-  <h3>איך לזכור חומר לאורך זמן?</h3>
-  <p>לחזור על החומר כמה פעמים בזמנים שונים (חזרות קצרות).</p>
+    <div class="box">
+      <h3>מה לעשות אם לא מבינים?</h3>
+      <p>לשאול מורה או לחפש הסבר אחר</p>
+    </div>
 
-  <br><br>
-  <a href="index.html">⬅ חזרה לדף הבית</a>
+  </div>
 
 </body>
 </html>
