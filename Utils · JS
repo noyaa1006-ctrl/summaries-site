@@ -1,0 +1,60 @@
+
+// Small shared helpers. Keeping these in one place avoids copy-pasting
+// the same logic into every page script.
+ 
+export const qs = (sel, scope = document) => scope.querySelector(sel);
+export const qsa = (sel, scope = document) => Array.from(scope.querySelectorAll(sel));
+ 
+export function debounce(fn, delay = 200) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+}
+ 
+export function getParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
+ 
+export function setParams(params) {
+  const url = new URL(window.location.href);
+  Object.entries(params).forEach(([key, value]) => {
+    if (value === "" || value === null || value === undefined || value === "all") {
+      url.searchParams.delete(key);
+    } else {
+      url.searchParams.set(key, value);
+    }
+  });
+  window.history.replaceState({}, "", url);
+}
+ 
+export function escapeHtml(str = "") {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+ 
+// Resolve data paths correctly whether the page lives at the site root
+// (index.html) or inside /pages/.
+export function dataPath(file) {
+  const inPages = window.location.pathname.includes("/pages/");
+  return (inPages ? "../data/" : "data/") + file;
+}
+ 
+export function pagePath(file) {
+  const inPages = window.location.pathname.includes("/pages/");
+  return inPages ? file : "pages/" + file;
+}
+ 
+let cache = {};
+export async function loadData(file) {
+  if (cache[file]) return cache[file];
+  const res = await fetch(dataPath(file));
+  if (!res.ok) throw new Error(`Failed to load ${file}`);
+  const json = await res.json();
+  cache[file] = json;
+  return json;
+}
+ 
